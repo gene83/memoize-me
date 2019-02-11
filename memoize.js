@@ -4,7 +4,7 @@ const memoize = (function() {
   const cache = {};
 
   function getElementById(id) {
-    if (cache[id]) {
+    if (id in cache) {
       return cache[id];
     }
 
@@ -13,7 +13,7 @@ const memoize = (function() {
   }
 
   function querySelector(selector) {
-    if (cache[selector]) {
+    if (selector in cache) {
       return cache[selector];
     }
 
